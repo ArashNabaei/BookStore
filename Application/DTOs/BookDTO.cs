@@ -1,4 +1,5 @@
-﻿namespace Application.DTOs
+﻿
+namespace Application.DTOs
 {
     public class BookDTO
     {
@@ -9,7 +10,7 @@
 
         public float Price { get; set; }
 
-        public string Genre { get; set; }
+        public string? Genre { get; set; }
 
     }
 }

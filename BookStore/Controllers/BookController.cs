@@ -1,10 +1,7 @@
-﻿using Application.Repositories.Command.Authors.Delete;
-using Application.Repositories.Command.Books.Create;
+﻿using Application.Repositories.Command.Books.Create;
 using Application.Repositories.Command.Books.Delete;
 using Application.Repositories.Query.Books;
-using Domain.Entities;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.Controllers

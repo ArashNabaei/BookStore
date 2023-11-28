@@ -6,6 +6,7 @@ namespace Application.Services.Write.Books
 {
     public class WriteBookService : IWriteBookService
     {
+
         private readonly IUnitOfWork _unitOfWork;
 
         public WriteBookService(IUnitOfWork unitOfWork)
@@ -13,20 +14,19 @@ namespace Application.Services.Write.Books
             _unitOfWork = unitOfWork;
         }
 
-        #region public Method
-
         public async Task CreateBookAsync(BookDTO bookDTO)
         {
             var book = new Book
             {
                 Id = bookDTO.Id,
                 Name = bookDTO.Name,
-                Price = bookDTO.Price,
+                Price  = bookDTO.Price,
                 Genre = bookDTO.Genre
             };
 
             await _unitOfWork.BookRepository.CreateBookAsync(book);
             await _unitOfWork.Save();
+
         }
 
         public async Task DeleteBookAsync(int id)
@@ -35,8 +35,5 @@ namespace Application.Services.Write.Books
             await _unitOfWork.Save();
         }
 
-        #endregion
-
     }
-
 }

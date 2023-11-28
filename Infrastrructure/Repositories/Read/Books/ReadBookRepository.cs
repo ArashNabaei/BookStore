@@ -16,19 +16,20 @@ namespace Infrastructure.Repositories.Read.Books
 
         public async Task<IEnumerable<Book>> GetAllBooksAsync()
         {
-            try 
+            try
             {
                 string query = "SELECT * FROM Books;";
                 return await _dapperConnection.Connection.QueryAsync<Book>(query);
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
 
             finally
             {
+
                 _dapperConnection.Dispose();
             }
 
@@ -37,13 +38,13 @@ namespace Infrastructure.Repositories.Read.Books
 
         public async Task<Book> GetBookByIdAsync(int id)
         {
-            try 
+            try
             {
                 string query = "SELECT * FROM Books WHERE Id = @id;";
                 return await _dapperConnection.Connection.QueryFirstAsync<Book>(query, new { id });
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }

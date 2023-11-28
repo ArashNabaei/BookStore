@@ -1,12 +1,5 @@
-﻿using Application.Repositories.Command.Authors.Delete;
-using Application.Services.Write.Authors;
-using Application.Services.Write.Publishers;
+﻿using Application.Services.Write.Publishers;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Repositories.Command.Publishers.Delete
 {

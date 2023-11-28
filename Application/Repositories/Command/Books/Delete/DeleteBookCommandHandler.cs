@@ -1,7 +1,4 @@
-﻿using Application.Repositories.Command.Authors.Delete;
-using Application.Services.Write.Authors;
-using Application.Services.Write.Books;
-using Domain.Repositories;
+﻿using Application.Services.Write.Books;
 using MediatR;
 
 namespace Application.Repositories.Command.Books.Delete

@@ -1,13 +1,6 @@
 ﻿using Application.DTOs;
-using Application.Repositories.Command.Authors.Create;
-using Application.Services.Write.Authors;
 using Application.Services.Write.Publishers;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Repositories.Command.Publishers.Create
 {

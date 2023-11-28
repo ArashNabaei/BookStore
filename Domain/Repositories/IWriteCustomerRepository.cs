@@ -4,7 +4,6 @@ namespace Domain.Repositories
 {
     public interface IWriteCustomerRepository
     {
-
         Task CreateCustomerAsync(Customer customer);
 
         Task DeleteCustomerAsync(int Id);

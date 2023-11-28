@@ -4,6 +4,7 @@
     {
         IWriteAuthorRepository AuthorRepository { get; }
 
+
         IWriteBookRepository BookRepository { get; }
 
         IWriteCustomerRepository CustomerRepository { get; }

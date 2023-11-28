@@ -1,6 +1,5 @@
 ﻿using Application.DTOs;
 using Domain.Repositories;
-using Infrastructure.Repositories.Read.Authors;
 
 namespace Application.Services.Read.Customers
 {

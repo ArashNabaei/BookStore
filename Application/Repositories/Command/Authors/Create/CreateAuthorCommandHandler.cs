@@ -1,6 +1,5 @@
 ﻿using Application.DTOs;
 using Application.Services.Write.Authors;
-using Domain.Repositories;
 using MediatR;
 
 namespace Application.Repositories.Command.Authors.Create

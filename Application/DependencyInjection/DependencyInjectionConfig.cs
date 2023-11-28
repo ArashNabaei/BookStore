@@ -1,6 +1,5 @@
 ﻿using Application.Services.Write.Authors;
 using Application.Services.Write.Books;
-using Application.Services.Write.Customers;
 using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Application.Services.Read.Customers;
@@ -21,6 +20,7 @@ using Infrastructure.Repositories.Read.Publishers;
 using Infrastructure.Repositories.Write.Publishers;
 using Application.Services.Read.Publishers;
 using Application.Services.Write.Publishers;
+using Application.Services.Write.Customers;
 
 namespace BookStore
 {
@@ -38,13 +38,13 @@ namespace BookStore
 
             services.AddScoped<DapperConnection>();
 
-            services.AddScoped<IReadBookRepository, ReadBookRepository>();
             services.AddScoped<IReadAuthorRepository, ReadAuthorRepository>();
+            services.AddScoped<IReadBookRepository, ReadBookRepository>();
             services.AddScoped<IReadCustomerRepository, ReadCustomerRepository>();
             services.AddScoped<IReadPublisherRepository, ReadPublisherRepository>();
 
-            services.AddScoped<IWriteBookRepository, WriteBookRepository>();
             services.AddScoped<IWriteAuthorRepository, WriteAuthorRepository>();
+            services.AddScoped<IWriteBookRepository, WriteBookRepository>();
             services.AddScoped<IWriteCustomerRepository, WriteCustomerRepository>();
             services.AddScoped<IWritePublisherRepository, WritePublisherRepository>();
 

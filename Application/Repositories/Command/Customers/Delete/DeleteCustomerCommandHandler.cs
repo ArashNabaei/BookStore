@@ -1,5 +1,4 @@
 ﻿using Application.Services.Write.Customers;
-using Domain.Repositories;
 using MediatR;
 
 namespace Application.Repositories.Command.Customers.Delete

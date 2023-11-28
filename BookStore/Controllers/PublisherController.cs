@@ -1,8 +1,5 @@
-﻿using Application.Repositories.Command.Authors.Create;
-using Application.Repositories.Command.Authors.Delete;
-using Application.Repositories.Command.Publishers.Create;
+﻿using Application.Repositories.Command.Publishers.Create;
 using Application.Repositories.Command.Publishers.Delete;
-using Application.Repositories.Query.Authors;
 using Application.Repositories.Query.Publishers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

@@ -44,39 +44,5 @@ namespace Infrastructure.Repositories.Write.Books
 
         }
 
-        //public async Task<Book> GetBookByIdAsync(int id)
-        //{
-        //    try
-        //    {
-        //        var existingBook = await _eFConnection.Books.FindAsync(id);
-
-        //        if (existingBook != null)
-        //            return existingBook;
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
-
-        //    return new Book();
-        //}
-
-
-        //public async Task UpdateBookAsync(int id, Book book)
-        //{
-        //    var existingBook = await eFConnection.Books.FindAsync(id);
-
-        //    if (existingBook != null)
-        //    {
-        //        existingBook.name = book.name;
-        //        existingBook.price = book.price;
-        //        existingBook.genre = book.genre;
-
-        //    }
-
-        //    await eFConnection.SaveChangesAsync();
-        //}
-
     }
 }
