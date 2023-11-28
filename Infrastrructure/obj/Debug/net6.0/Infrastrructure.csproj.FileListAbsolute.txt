@@ -1,0 +1,17 @@
+D:\projects\BookStore\Infrastrructure\bin\Debug\net6.0\Infrastrructure.deps.json
+D:\projects\BookStore\Infrastrructure\bin\Debug\net6.0\Infrastrructure.dll
+D:\projects\BookStore\Infrastrructure\bin\Debug\net6.0\Infrastrructure.pdb
+D:\projects\BookStore\Infrastrructure\bin\Debug\net6.0\Domain.dll
+D:\projects\BookStore\Infrastrructure\bin\Debug\net6.0\Domain.pdb
+D:\projects\BookStore\Infrastrructure\obj\Debug\net6.0\Infrastrructure.csproj.AssemblyReference.cache
+D:\projects\BookStore\Infrastrructure\obj\Debug\net6.0\Infrastrructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\BookStore\Infrastrructure\obj\Debug\net6.0\Infrastrructure.AssemblyInfoInputs.cache
+D:\projects\BookStore\Infrastrructure\obj\Debug\net6.0\Infrastrructure.AssemblyInfo.cs
+D:\projects\BookStore\Infrastrructure\obj\Debug\net6.0\Infrastrructure.csproj.CoreCompileInputs.cache
+D:\projects\BookStore\Infrastrructure\obj\Debug\net6.0\Infrastrructure.csproj.CopyComplete
+D:\projects\BookStore\Infrastrructure\obj\Debug\net6.0\Infrastrructure.dll
+D:\projects\BookStore\Infrastrructure\obj\Debug\net6.0\refint\Infrastrructure.dll
+D:\projects\BookStore\Infrastrructure\obj\Debug\net6.0\Infrastrructure.pdb
+D:\projects\BookStore\Infrastrructure\obj\Debug\net6.0\ref\Infrastrructure.dll
+D:\projects\BookStore\Infrastrructure\bin\Debug\net6.0\Infrastrructure.runtimeconfig.json
+D:\projects\BookStore\Infrastrructure\obj\Debug\net6.0\Infrastrructure.genruntimeconfig.cache
