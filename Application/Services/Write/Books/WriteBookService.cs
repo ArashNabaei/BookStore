@@ -33,7 +33,6 @@ namespace Application.Services.Write.Books
         {
             await _unitOfWork.BookRepository.DeleteBookAsync(id);
             await _unitOfWork.Save();
-
         }
 
         #endregion

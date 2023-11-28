@@ -1,4 +1,6 @@
-﻿using Application.Services.Write.Books;
+﻿using Application.Repositories.Command.Authors.Delete;
+using Application.Services.Write.Authors;
+using Application.Services.Write.Books;
 using Domain.Repositories;
 using MediatR;
 
@@ -17,7 +19,7 @@ namespace Application.Repositories.Command.Books.Delete
         {
 
             await _writeBookService.DeleteBookAsync(request.Id);
-            
+
             return request.Id;
         }
 

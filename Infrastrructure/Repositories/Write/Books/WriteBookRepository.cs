@@ -35,10 +35,9 @@ namespace Infrastructure.Repositories.Write.Books
 
                 if (bookToDelete != null)
                     _eFConnection.Books.Remove(bookToDelete);
-
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }

@@ -1,4 +1,8 @@
 ﻿using Domain.Repositories;
+using Infrastructure.Repositories.Write.Authors;
+using Infrastructure.Repositories.Write.Books;
+using Infrastructure.Repositories.Write.Customers;
+using Infrastructure.Repositories.Write.Publishers;
 
 namespace Infrastructure
 {
@@ -6,21 +10,45 @@ namespace Infrastructure
     {
         private readonly EFConnection _eFConnection;
 
-        public IWriteAuthorRepository AuthorRepository { get; }
+        private IWriteAuthorRepository _authorRepository;
+        public IWriteAuthorRepository AuthorRepository
+        {
+            get
+            {
+                return _authorRepository ??= new WriteAuthorRepository(_eFConnection);
+            }
+        }
 
-        public IWriteBookRepository BookRepository { get; }
+        private IWriteBookRepository _bookRepository;
+        public IWriteBookRepository BookRepository
+        {
+            get
+            {
+                return _bookRepository ??= new WriteBookRepository(_eFConnection);
+            }
+        }
 
-        public IWriteCustomerRepository CustomerRepository { get; }
+        private IWriteCustomerRepository _customerRepository;
+        public IWriteCustomerRepository CustomerRepository
+        {
+            get
+            {
+                return _customerRepository ??= new WriteCustomerRepository(_eFConnection);
+            }
+        }
 
-        public IWritePublisherRepository PublisherRepository { get; }
+        private IWritePublisherRepository _publisherRepository;
+        public IWritePublisherRepository PublisherRepository
+        {
+            get
+            {
+                return _publisherRepository ??= new WritePublisherRepository(_eFConnection);
+            }
+        }
 
-        public UnitOfWork(EFConnection eFConnection, IWriteAuthorRepository authorRepository, IWriteBookRepository bookRepository, IWriteCustomerRepository customerRepository, IWritePublisherRepository publisherRepository)
+        public UnitOfWork(EFConnection eFConnection)
         {
             _eFConnection = eFConnection;
-            AuthorRepository = authorRepository;
-            BookRepository = bookRepository;
-            CustomerRepository = customerRepository;
-            PublisherRepository = publisherRepository;
         }
 
         public void StartTransaction()
