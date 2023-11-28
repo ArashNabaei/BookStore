@@ -12,7 +12,5 @@ namespace Domain.Entities
 
         public string Information { get; set; }
 
-
-
     }
 }

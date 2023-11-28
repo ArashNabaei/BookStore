@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S++I7Sje9gVeyw48VAwODomXmoiXI/IUD0TBeeCXBSnqXmn8ThVRyQ1MnCrVQW4doMFyL+eRXdi//QckwvIlNw==",
+  "dgSpecHash": "fdB9hcLzuBl5IilyapDiOrvwMffK+oNQ8YO8i4zWtAHOE8mq/6w9P9Wl0wyh//aokuSKt10R2SamFfVGKbI8cQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\Desktop\\BookStore\\BookStore\\Infrastrructure\\Infrastructure.csproj",
+  "projectFilePath": "D:\\projects\\BookStore\\Infrastrructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

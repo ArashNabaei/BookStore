@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bSU4aESbr6EqszUFtPuKUh+Mt2EkC8YGOXNigwL1B4hVCEGFCudjre6R7xUgotKlvBnawXGZNjtHgQqmPLa7hQ==",
+  "dgSpecHash": "N/bGxd16nyxYZc3V0XhkziNM/eCy6TwcYsG0m/c2Ra99EVufCO6W4EDzejNZpzRXyF/zROLjvBjd1wSXvS9K4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\Desktop\\BookStore\\BookStore\\Domain\\Domain.csproj",
+  "projectFilePath": "D:\\projects\\BookStore\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
