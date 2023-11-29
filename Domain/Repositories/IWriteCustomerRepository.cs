@@ -10,6 +10,8 @@ namespace Domain.Repositories
 
         Task BuyBookForCustomer(int customerId, int bookId);
 
+        Task Deposit(int id, float amount);
+
         // Task<Customer> GetCustomerByIdAsync(int Id);
 
         // Task UpdateCustomerAsync(int id, Customer customer);

@@ -69,11 +69,20 @@ namespace BookStore.Controllers
             return NotFound();
         }
 
-        [HttpPut("BuyBookForCustomer/{customerId, bookId}")]
+        [HttpPut("BuyBookForCustomer/")]
         public async Task<IActionResult> BuyBookForCustomer(BuyBookForCustomerCommand command)
         {
             var query = new BuyBookForCustomerCommand(command.CustomerId, command.BookId);
 
+            await _mediator.Send(query);
+
+            return Ok(query);
+        }
+
+        [HttpPut("Deposit")]
+        public async Task<IActionResult> Deposit(DepositCommand command)
+        {
+            var query = new DepositCommand(command.Id, command.Amount);
             await _mediator.Send(query);
 
             return Ok(query);

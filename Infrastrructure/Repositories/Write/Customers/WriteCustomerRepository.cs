@@ -64,6 +64,21 @@ namespace Infrastructure.Repositories.Write.Customers
 
         }
 
+        public async Task Deposit(int id, float amount)
+        {
+            try
+            {
+                var existingCustomer = await _eFConnection.Customers.FindAsync(id);
+
+                if (existingCustomer != null)
+                    existingCustomer.Balance += amount;
+            }
+
+            catch(Exception ex )
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
         //public async Task<Customer> GetCustomerByIdAsync(int id)
         //{
