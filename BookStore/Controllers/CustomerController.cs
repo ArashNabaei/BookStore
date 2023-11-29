@@ -30,7 +30,7 @@ namespace BookStore.Controllers
         [HttpGet("GetCustomer/{id}")]
         public async Task<IActionResult> GetCustomerById(int id)
         {
-            var query = new GetCustomerByIdQuery (id);
+            var query = new GetCustomerByIdQuery(id);
 
             var customer = await _mediator.Send(query);
 
@@ -49,7 +49,7 @@ namespace BookStore.Controllers
         [HttpDelete("DeleteCustomer/{id}")]
         public async Task<IActionResult> DeleteCustomer(int id)
         {
-            var deleteCommand = new DeleteCustomerCommand (id);
+            var deleteCommand = new DeleteCustomerCommand(id);
             var deleteResult = await _mediator.Send(deleteCommand);
             return Ok(deleteResult);
         }
@@ -69,7 +69,7 @@ namespace BookStore.Controllers
             return NotFound();
         }
 
-        [HttpPut("BuyBookForCustomer/")]
+        [HttpPost("buy")]
         public async Task<IActionResult> BuyBookForCustomer(BuyBookForCustomerCommand command)
         {
             var query = new BuyBookForCustomerCommand(command.CustomerId, command.BookId);
