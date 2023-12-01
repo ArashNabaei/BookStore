@@ -18,7 +18,6 @@ namespace Application.Repositories.Command.Publishers.Create
         {
             var newPublisher = new PublisherDTO
             {
-                Id = request.Id,
                 Name = request.Name,
                 Address = request.Address,
                 Information = request.Information

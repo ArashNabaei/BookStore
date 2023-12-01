@@ -18,7 +18,6 @@ namespace Application.Repositories.Command.Authors.Create
         {
             var newAuthor = new AuthorDTO
             {
-                Id = request.Id,
                 Username = request.Username,
                 Password = request.Password
             };

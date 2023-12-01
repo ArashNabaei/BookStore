@@ -18,7 +18,6 @@ namespace Application.Repositories.Command.Customers.Create
 
             var newCustomer = new CustomerDTO
             {
-                Id = request.Id,
                 Username = request.Username,
                 Password = request.Password,
                 Balance = request.Balance,

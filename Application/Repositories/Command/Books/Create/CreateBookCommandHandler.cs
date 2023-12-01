@@ -18,10 +18,9 @@ namespace Application.Repositories.Command.Books.Create
         {
             var newBook = new BookDTO
             {
-                Id = request.Id,
                 Name = request.Name,
                 Price = request.Price,
-                Genre = request.Genre
+                Genre = request.Genre,
             };
 
             await _writeBookService.CreateBookAsync(newBook);

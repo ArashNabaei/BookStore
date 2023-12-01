@@ -2,7 +2,7 @@
 
 namespace Application.Repositories.Command.Authors.Create
 {
-    public record CreateAuthorCommand(int Id, string Username, string Password) : IRequest<int>
+    public record CreateAuthorCommand(string Username, string Password) : IRequest<int>
     {
        
     }

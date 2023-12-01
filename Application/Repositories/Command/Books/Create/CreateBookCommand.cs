@@ -2,7 +2,7 @@
 
 namespace Application.Repositories.Command.Books.Create
 {
-    public record CreateBookCommand(int Id, string Name, float Price, string Genre) : IRequest<int>
+    public record CreateBookCommand(string Name, float Price, string Genre) : IRequest<int>
     {
 
     }
