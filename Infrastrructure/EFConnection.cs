@@ -9,6 +9,7 @@ namespace Infrastructure
     {
         public EFConnection(DbContextOptions<EFConnection> options) : base(options)
         {
+            this.OnModelCreating(new ModelBuilder());
         }
 
         public DbSet<Author> Authors { get; set; }
