@@ -7,9 +7,9 @@ namespace Application.Services.Read.Customers
 
         Task<IEnumerable<CustomerDTO>> GetAllCustomersAsync();
 
-        Task<CustomerDTO> GetCustomerByIdAsync(int Id);
+        Task<CustomerDTO> GetCustomerByIdAsync(int id);
 
-        Task<IEnumerable<BookDTO>> GetBooksOfCustomerByIdAsync(int Id);
+        Task<IEnumerable<BookDTO>> GetBooksOfCustomerByIdAsync(int id);
 
     }
 }

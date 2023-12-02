@@ -6,7 +6,7 @@ namespace Domain.Repositories
     {
         Task CreateAuthorAsync(Author author);
 
-        Task DeleteAuthorAsync(int Id);
+        Task DeleteAuthorAsync(int id);
 
         // Task<Author> GetAuthorByIdAsync(int Id);
 

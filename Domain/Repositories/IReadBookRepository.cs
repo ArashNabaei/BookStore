@@ -7,7 +7,7 @@ namespace Domain.Repositories
 
         Task<IEnumerable<Book>> GetAllBooksAsync();
 
-        Task<Book> GetBookByIdAsync(int Id);
+        Task<Book> GetBookByIdAsync(int id);
 
     }
 }

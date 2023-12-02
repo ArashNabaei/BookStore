@@ -7,7 +7,7 @@ namespace Application.Services.Read.Publishers
 
         Task<IEnumerable<PublisherDTO>> GetAllPublishersAsync();
 
-        Task<PublisherDTO> GetPublisherByIdAsync(int Id);
+        Task<PublisherDTO> GetPublisherByIdAsync(int id);
 
     }
 }

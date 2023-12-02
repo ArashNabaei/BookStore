@@ -8,7 +8,7 @@ namespace Domain.Repositories
 
         Task<IEnumerable<Publisher>> GetAllPublishersAsync();
 
-        Task<Publisher> GetPublisherByIdAsync(int Id);
+        Task<Publisher> GetPublisherByIdAsync(int id);
 
     }
 }

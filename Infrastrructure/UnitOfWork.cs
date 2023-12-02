@@ -59,17 +59,17 @@ namespace Infrastructure
 
         public void StartTransaction()
         {
-            _eFConnection.transaction.Connection.BeginTransaction();
+            _eFConnection.Transaction.Connection.BeginTransaction();
         }
 
         public void Commit()
         {
-            _eFConnection.transaction.Commit();
+            _eFConnection.Transaction.Commit();
         }
 
         public void Rollback()
         {
-            _eFConnection.transaction.Rollback();
+            _eFConnection.Transaction.Rollback();
         }
 
         public async Task Save()

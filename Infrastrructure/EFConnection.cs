@@ -20,7 +20,7 @@ namespace Infrastructure
 
         public DbSet<Publisher> Publishers { get; set; }
 
-        public IDbTransaction transaction { get; set; }
+        public IDbTransaction Transaction { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

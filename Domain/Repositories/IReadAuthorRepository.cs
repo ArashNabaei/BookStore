@@ -6,9 +6,9 @@ namespace Domain.Repositories
     {
         Task<IEnumerable<Author>> GetAllAuthorsAsync();
 
-        Task<Author> GetAuthorByIdAsync(int Id);
+        Task<Author> GetAuthorByIdAsync(int id);
 
-        Task<IEnumerable<Book>> GetBooksOfAuhorByIdAsync(int Id);
+        Task<IEnumerable<Book>> GetBooksOfAuhorByIdAsync(int id);
 
     }
 }

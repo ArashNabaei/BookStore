@@ -6,9 +6,9 @@ namespace Application.Services.Read.Authors
     {
         Task<IEnumerable<AuthorDTO>> GetAllAuthorsAsync();
 
-        Task<AuthorDTO> GetAuthorByIdAsync(int Id);
+        Task<AuthorDTO> GetAuthorByIdAsync(int id);
 
-        Task<IEnumerable<BookDTO>> GetBooksOfAuhorByIdAsync(int Id);
+        Task<IEnumerable<BookDTO>> GetBooksOfAuhorByIdAsync(int id);
 
     }
 }

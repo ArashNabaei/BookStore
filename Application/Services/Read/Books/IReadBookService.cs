@@ -8,7 +8,7 @@ namespace Application.Services.Read.Books
 
         Task<IEnumerable<BookDTO>> GetAllBooksAsync();
 
-        Task<BookDTO> GetBookByIdAsync(int Id);
+        Task<BookDTO> GetBookByIdAsync(int id);
 
     }
 }

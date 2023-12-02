@@ -6,7 +6,7 @@ namespace Domain.Repositories
     {
         Task CreatePublisherAsync(Publisher publisher);
 
-        Task DeletePublisherAsync(int Id);
+        Task DeletePublisherAsync(int id);
 
     }
 }

@@ -6,7 +6,7 @@ namespace Domain.Repositories
     {
         Task CreateCustomerAsync(Customer customer);
 
-        Task DeleteCustomerAsync(int Id);
+        Task DeleteCustomerAsync(int id);
 
         Task BuyBookForCustomer(int customerId, int bookId);
 
