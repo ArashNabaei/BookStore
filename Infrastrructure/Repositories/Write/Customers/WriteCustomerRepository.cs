@@ -52,9 +52,17 @@ namespace Infrastructure.Repositories.Write.Customers
             try
             {
                 var exsitingCustomer = await _eFConnection.Customers.FindAsync(customerId);
+                var existingBook = await _eFConnection.Books.FindAsync(bookId);
 
-                if (exsitingCustomer != null)
-                    exsitingCustomer.Orders = bookId;
+                if (exsitingCustomer != null && existingBook != null)
+                {
+                    if (existingBook.Price >= exsitingCustomer.Balance)
+                    {
+                        exsitingCustomer.Orders = bookId;
+                        exsitingCustomer.Balance -= existingBook.Price;
+                    }
+                        
+                }
             }
 
             catch(Exception ex)
@@ -70,7 +78,7 @@ namespace Infrastructure.Repositories.Write.Customers
             {
                 var existingCustomer = await _eFConnection.Customers.FindAsync(id);
 
-                if (existingCustomer != null)
+                if (existingCustomer != null && amount > 0)
                     existingCustomer.Balance += amount;
             }
 
