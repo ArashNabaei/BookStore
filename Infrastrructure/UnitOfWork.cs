@@ -19,7 +19,6 @@ namespace Infrastructure
             }
         }
 
-
         private IWriteBookRepository _bookRepository;
         public IWriteBookRepository BookRepository
         {
@@ -28,11 +27,6 @@ namespace Infrastructure
                 return _bookRepository ??= new WriteBookRepository(_eFConnection);
             }
         }
-
-
-
-
-
 
         private IWriteCustomerRepository _customerRepository;
         public IWriteCustomerRepository CustomerRepository

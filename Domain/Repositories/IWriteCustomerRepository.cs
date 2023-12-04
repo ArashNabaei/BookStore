@@ -12,9 +12,5 @@ namespace Domain.Repositories
 
         Task Deposit(int id, float amount);
 
-        // Task<Customer> GetCustomerByIdAsync(int Id);
-
-        // Task UpdateCustomerAsync(int id, Customer customer);
-
     }
 }

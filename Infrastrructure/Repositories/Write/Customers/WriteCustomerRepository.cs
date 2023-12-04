@@ -88,41 +88,6 @@ namespace Infrastructure.Repositories.Write.Customers
             }
         }
 
-        //public async Task<Customer> GetCustomerByIdAsync(int id)
-        //{
-        //    try
-        //    {
-        //        var existingCustomer = await _eFConnection.Customers.FindAsync(id);
-
-        //        if (existingCustomer != null)
-        //            return existingCustomer;
-
-        //    }
-
-        //    catch(Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
-
-        //    return new Customer();
-        //}
-
-
-        //public async Task UpdateCustomerAsync(int id, Customer customer)
-        //{
-        //    var existingCustomer = await eFConnection.Customers.FindAsync(id);
-
-        //    if (existingCustomer != null)
-        //    {
-        //        existingCustomer.username = customer.username;
-        //        existingCustomer.password = customer.password;
-        //        existingCustomer.balance = customer.balance;
-        //        existingCustomer.orders = customer.orders;
-        //    }
-
-        //    await eFConnection.SaveChangesAsync();
-        //}
-
     }
 
 }

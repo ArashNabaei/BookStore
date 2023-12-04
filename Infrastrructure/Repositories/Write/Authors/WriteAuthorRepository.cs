@@ -44,39 +44,5 @@ namespace Infrastructure.Repositories.Write.Authors
 
         }
 
-        //public async Task<Author> GetAuthorByIdAsync(int id)
-        //{
-        //    try
-        //    {
-        //        var existingAuthor = await _eFConnection.Authors.FindAsync(id);
-
-        //        if (existingAuthor != null)
-        //            return existingAuthor;
-        //    }
-
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
-
-        //    return new Author();
-        //}
-
-
-
-        //public async Task UpdateAuthorAsync(int id, Author author)
-        //{
-        //    var existingAuthor = await eFConnection.Authors.FindAsync(id);
-
-        //    if (existingAuthor != null)
-        //    {
-        //        existingAuthor.username = author.username;
-        //        existingAuthor.password = author.password;
-
-        //    }
-
-        //    await eFConnection.SaveChangesAsync();
-        //}
-
     }
 }

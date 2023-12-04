@@ -8,9 +8,5 @@ namespace Domain.Repositories
 
         Task DeleteAuthorAsync(int id);
 
-        // Task<Author> GetAuthorByIdAsync(int Id);
-
-        // Task UpdateAuthorAsync(int id, Author author);
-
     }
 }

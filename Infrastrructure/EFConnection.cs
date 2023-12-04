@@ -1,7 +1,6 @@
 ﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
-using System.Reflection.Metadata;
 
 namespace Infrastructure
 {
@@ -9,7 +8,7 @@ namespace Infrastructure
     {
         public EFConnection(DbContextOptions<EFConnection> options) : base(options)
         {
-            this.OnModelCreating(new ModelBuilder());
+            OnModelCreating(new ModelBuilder());
         }
 
         public DbSet<Author> Authors { get; set; }

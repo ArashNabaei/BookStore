@@ -16,7 +16,7 @@ namespace Infrastructure
         {
             disposed = false;
             _configuration = configuration;
-            Connection = new SqlConnection(this._configuration.GetConnectionString("MyDatabaseConnection"));
+            Connection = new SqlConnection(_configuration.GetConnectionString("MyDatabaseConnection"));
             Connection.Open();
         }
 
