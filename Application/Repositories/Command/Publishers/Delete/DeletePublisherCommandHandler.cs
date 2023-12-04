@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Application.Repositories.Command.Publishers.Delete
 {
-    public class DeletePublisherCommandHandler : IRequestHandler<DeletePublisherCommand, int>
+    public class DeletePublisherCommandHandler : IRequestHandler<DeletePublisherCommand>
     {
         private readonly IWritePublisherService _writePublisherService;
 
@@ -12,12 +12,9 @@ namespace Application.Repositories.Command.Publishers.Delete
             _writePublisherService = writePublisherService;
         }
 
-        public async Task<int> Handle(DeletePublisherCommand request, CancellationToken cancellationToken)
+        public async Task Handle(DeletePublisherCommand request, CancellationToken cancellationToken)
         {
-
             await _writePublisherService.DeletePublisherAsync(request.Id);
-
-            return request.Id;
         }
 
     }

@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Repositories.Command.Publishers.Create
 {
-    public class CreatePublisherCommandHandler : IRequestHandler<CreatePublisherCommand, int>
+    public class CreatePublisherCommandHandler : IRequestHandler<CreatePublisherCommand>
     {
 
         private readonly IWritePublisherService _writePublisherService;
@@ -14,7 +14,7 @@ namespace Application.Repositories.Command.Publishers.Create
             _writePublisherService = writePublisherService;
         }
 
-        public async Task<int> Handle(CreatePublisherCommand request, CancellationToken cancellationToken)
+        public async Task Handle(CreatePublisherCommand request, CancellationToken cancellationToken)
         {
             var newPublisher = new PublisherDTO
             {
@@ -24,9 +24,6 @@ namespace Application.Repositories.Command.Publishers.Create
             };
 
             await _writePublisherService.CreatePublisherAsync(newPublisher);
-
-            return newPublisher.Id;
-
         }
     }
 }

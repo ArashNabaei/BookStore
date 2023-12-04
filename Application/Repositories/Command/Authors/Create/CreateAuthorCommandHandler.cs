@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Repositories.Command.Authors.Create
 {
-    public class CreateAuthorCommandHandler : IRequestHandler<CreateAuthorCommand, int>
+    public class CreateAuthorCommandHandler : IRequestHandler<CreateAuthorCommand>
     {
 
         private readonly IWriteAuthorService _writeAuthorService;
@@ -14,7 +14,7 @@ namespace Application.Repositories.Command.Authors.Create
             _writeAuthorService = writeAuthorService;
         }
 
-        public async Task<int> Handle(CreateAuthorCommand request, CancellationToken cancellationToken)
+        public async Task Handle(CreateAuthorCommand request, CancellationToken cancellationToken)
         {
             var newAuthor = new AuthorDTO
             {
@@ -23,9 +23,6 @@ namespace Application.Repositories.Command.Authors.Create
             };
 
             await _writeAuthorService.CreateAuthorAsync(newAuthor);
-
-            return newAuthor.Id;
-
         }
     }
 

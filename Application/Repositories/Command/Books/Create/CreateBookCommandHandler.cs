@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Repositories.Command.Books.Create
 {
-    public class CreateBookCommandHandler : IRequestHandler<CreateBookCommand, int>
+    public class CreateBookCommandHandler : IRequestHandler<CreateBookCommand>
     {
 
         private readonly IWriteBookService _writeBookService;
@@ -14,7 +14,7 @@ namespace Application.Repositories.Command.Books.Create
             _writeBookService = writeBookService;
         }
 
-        public async Task<int> Handle(CreateBookCommand request, CancellationToken cancellationToken)
+        public async Task Handle(CreateBookCommand request, CancellationToken cancellationToken)
         {
             var newBook = new BookDTO
             {
@@ -24,9 +24,6 @@ namespace Application.Repositories.Command.Books.Create
             };
 
             await _writeBookService.CreateBookAsync(newBook);
-
-            return newBook.Id;
-
         }
     }
 }

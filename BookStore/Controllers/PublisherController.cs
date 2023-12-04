@@ -40,17 +40,18 @@ namespace BookStore.Controllers
         [HttpPost("CreatePublisher")]
         public async Task<IActionResult> CreatePublisher(CreatePublisherCommand command)
         {
-            var publisher = await _mediator.Send(command);
+            await _mediator.Send(command);
 
-            return Ok(publisher);
+            return Ok();
         }
 
         [HttpDelete("DeletePublisher/{id}")]
         public async Task<IActionResult> DeletePublisher(int id)
         {
             var deleteCommand = new DeletePublisherCommand(id);
-            var deleteResult = await _mediator.Send(deleteCommand);
-            return Ok(deleteResult);
+            await _mediator.Send(deleteCommand);
+            
+            return Ok();
         }
 
     }

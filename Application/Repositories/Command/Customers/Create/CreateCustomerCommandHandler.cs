@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Repositories.Command.Customers.Create
 {
-    public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerCommand, int>
+    public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerCommand>
     {
         private readonly IWriteCustomerService _writeCustomerService;
 
@@ -13,7 +13,7 @@ namespace Application.Repositories.Command.Customers.Create
             _writeCustomerService = writeCustomerService;
         }
 
-        public async Task<int> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
+        public async Task Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
         {
 
             var newCustomer = new CustomerDTO
@@ -25,9 +25,6 @@ namespace Application.Repositories.Command.Customers.Create
             };
 
             await _writeCustomerService.CreateCustomerAsync(newCustomer);
-
-            return newCustomer.Id;
-
         }
     }
 

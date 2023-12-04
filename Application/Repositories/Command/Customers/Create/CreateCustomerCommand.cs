@@ -2,7 +2,7 @@
 
 namespace Application.Repositories.Command.Customers.Create
 {
-    public record CreateCustomerCommand(string Username, string Password, float Balance, int Orders) : IRequest<int>
+    public record CreateCustomerCommand(string Username, string Password, float Balance, int Orders) : IRequest
     {
 
     }

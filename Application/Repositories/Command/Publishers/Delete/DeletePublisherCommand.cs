@@ -2,7 +2,7 @@
 
 namespace Application.Repositories.Command.Publishers.Delete
 {
-    public record DeletePublisherCommand(int Id) : IRequest<int>
+    public record DeletePublisherCommand(int Id) : IRequest
     {
     }
 }

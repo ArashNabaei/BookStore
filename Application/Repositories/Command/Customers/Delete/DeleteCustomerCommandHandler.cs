@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Application.Repositories.Command.Customers.Delete
 {
-    public class DeleteCustomerCommandHandler : IRequestHandler<DeleteCustomerCommand, int>
+    public class DeleteCustomerCommandHandler : IRequestHandler<DeleteCustomerCommand>
     {
         private readonly IWriteCustomerService _writeCustomerService;
 
@@ -12,12 +12,9 @@ namespace Application.Repositories.Command.Customers.Delete
             _writeCustomerService = writeCustomerService;
         }
 
-        public async Task<int> Handle(DeleteCustomerCommand request, CancellationToken cancellationToken)
+        public async Task Handle(DeleteCustomerCommand request, CancellationToken cancellationToken)
         {
-
             await _writeCustomerService.DeleteCustomerAsync(request.Id);
-
-            return request.Id;
         }
 
     }
