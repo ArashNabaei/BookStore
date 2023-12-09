@@ -31,8 +31,18 @@ namespace Application.Services.Write.Books
 
         public async Task DeleteBookAsync(int id)
         {
-            await _unitOfWork.BookRepository.DeleteBookAsync(id);
-            await _unitOfWork.SaveChangesAsync();
+            try
+            {
+                await _unitOfWork.BeginTransactionAsync();
+                await _unitOfWork.BookRepository.DeleteBookAsync(id);
+                await _unitOfWork.SaveChangesAsync();
+                await _unitOfWork.CommitTransactionAsync();
+            }
+
+            catch
+            {
+                await _unitOfWork.RollbackTransactionAsync();
+            }
         }
 
     }

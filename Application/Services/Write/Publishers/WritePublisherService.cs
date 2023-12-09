@@ -31,8 +31,19 @@ namespace Application.Services.Write.Publishers
 
         public async Task DeletePublisherAsync(int id)
         {
-            await _unitOfWork.PublisherRepository.DeletePublisherAsync(id);
-            await _unitOfWork.SaveChangesAsync();
+            try
+            {
+                await _unitOfWork.BeginTransactionAsync();
+                await _unitOfWork.PublisherRepository.DeletePublisherAsync(id);
+                await _unitOfWork.SaveChangesAsync();
+                await _unitOfWork.CommitTransactionAsync();
+            }
+
+            catch
+            {
+                await _unitOfWork.RollbackTransactionAsync();
+            }
+
         }
 
 

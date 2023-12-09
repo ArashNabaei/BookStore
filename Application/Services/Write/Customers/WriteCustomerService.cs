@@ -43,8 +43,18 @@ namespace Application.Services.Write.Customers
 
         public async Task Deposit(int id, float amount)
         {
-            await _unitOfWork.CustomerRepository.Deposit(id, amount);
-            await _unitOfWork.SaveChangesAsync();
+            try
+            {
+                await _unitOfWork.BeginTransactionAsync();
+                await _unitOfWork.CustomerRepository.Deposit(id, amount);
+                await _unitOfWork.SaveChangesAsync();
+                await _unitOfWork.CommitTransactionAsync();
+            }
+
+            catch
+            {
+                await _unitOfWork.RollbackTransactionAsync();
+            }
         }
 
     }
