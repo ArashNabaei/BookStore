@@ -34,7 +34,11 @@ namespace Infrastructure.Repositories.Write.Books
                 var bookToDelete = await _eFConnection.Books.FindAsync(id);
 
                 if (bookToDelete != null)
+                {
+                    bookToDelete.AuthorId = 0;
+                    bookToDelete.CustomerId = 0;
                     _eFConnection.Books.Remove(bookToDelete);
+                }
             }
 
             catch (Exception ex)
