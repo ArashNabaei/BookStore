@@ -14,7 +14,6 @@ namespace Domain.Entities
         [Required]
         public string Password { get; set; }
 
-        
         public float Balance { get; set; }
 
         public int Orders { get; set; }

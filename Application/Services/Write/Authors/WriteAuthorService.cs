@@ -24,14 +24,23 @@ namespace Application.Services.Write.Authors
             };
 
             await _unitOfWork.AuthorRepository.CreateAuthorAsync(author);
-            await _unitOfWork.Save();
+            await _unitOfWork.SaveChangesAsync();
             
         }
 
         public async Task DeleteAuthorAsync(int id)
         {
-            await _unitOfWork.AuthorRepository.DeleteAuthorAsync(id);
-            await _unitOfWork.Save();
+            try
+            {
+                await _unitOfWork.BeginTransactionAsync();
+                await _unitOfWork.AuthorRepository.DeleteAuthorAsync(id);
+                await _unitOfWork.SaveChangesAsync();
+                await _unitOfWork.CommitTransactionAsync();
+            }
+            catch
+            {
+                await _unitOfWork.RollbackTransactionAsync();
+            }
         }
 
     }

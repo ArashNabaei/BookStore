@@ -3,12 +3,15 @@ using Infrastructure.Repositories.Write.Authors;
 using Infrastructure.Repositories.Write.Books;
 using Infrastructure.Repositories.Write.Customers;
 using Infrastructure.Repositories.Write.Publishers;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly EFConnection _eFConnection;
+
+        private IDbContextTransaction _transaction;
 
         private IWriteAuthorRepository _authorRepository;
         public IWriteAuthorRepository AuthorRepository
@@ -51,24 +54,27 @@ namespace Infrastructure
             _eFConnection = eFConnection;
         }
 
-        public void StartTransaction()
+        public async Task BeginTransactionAsync()
         {
-            _eFConnection.Transaction.Connection.BeginTransaction();
+            _transaction = await _eFConnection.Database.BeginTransactionAsync();
         }
 
-        public void Commit()
+        public async Task CommitTransactionAsync()
         {
-            _eFConnection.Transaction.Commit();
+            if (_transaction != null)
+                await _transaction.CommitAsync();
         }
 
-        public void Rollback()
+        public async Task RollbackTransactionAsync()
         {
-            _eFConnection.Transaction.Rollback();
+            if (_transaction != null)
+                await _transaction.RollbackAsync();
         }
 
-        public async Task Save()
+        public async Task SaveChangesAsync()
         {
             await _eFConnection.SaveChangesAsync();
         }
+
     }
 }

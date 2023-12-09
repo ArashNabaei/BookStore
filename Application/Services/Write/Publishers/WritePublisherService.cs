@@ -25,14 +25,14 @@ namespace Application.Services.Write.Publishers
             };
 
             await _unitOfWork.PublisherRepository.CreatePublisherAsync(publisher);
-            await _unitOfWork.Save();
+            await _unitOfWork.SaveChangesAsync();
 
         }
 
         public async Task DeletePublisherAsync(int id)
         {
             await _unitOfWork.PublisherRepository.DeletePublisherAsync(id);
-            await _unitOfWork.Save();
+            await _unitOfWork.SaveChangesAsync();
         }
 
 

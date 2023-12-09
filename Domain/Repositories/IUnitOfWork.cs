@@ -11,10 +11,13 @@
 
         IWritePublisherRepository PublisherRepository { get; }
 
-        void StartTransaction();
-        void Rollback();
-        void Commit();
-        Task Save();
+        Task BeginTransactionAsync();
+
+        Task CommitTransactionAsync();
+
+        Task RollbackTransactionAsync();
+
+        Task SaveChangesAsync();
 
     }
 }

@@ -25,26 +25,26 @@ namespace Application.Services.Write.Customers
             };
 
             await _unitOfWork.CustomerRepository.CreateCustomerAsync(customer);
-            await _unitOfWork.Save();
+            await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task DeleteCustomerAsync(int id)
         {
             await _unitOfWork.CustomerRepository.DeleteCustomerAsync(id);
-            await _unitOfWork.Save();
+            await _unitOfWork.SaveChangesAsync();
 
         }
 
         public async Task BuyBookForCustomer(int customerId, int bookId)
         {
             await _unitOfWork.CustomerRepository.BuyBookForCustomer(customerId, bookId);
-            await _unitOfWork.Save();
+            await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task Deposit(int id, float amount)
         {
             await _unitOfWork.CustomerRepository.Deposit(id, amount);
-            await _unitOfWork.Save();
+            await _unitOfWork.SaveChangesAsync();
         }
 
     }

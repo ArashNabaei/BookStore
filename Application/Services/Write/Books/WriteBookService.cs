@@ -25,14 +25,14 @@ namespace Application.Services.Write.Books
             };
 
             await _unitOfWork.BookRepository.CreateBookAsync(book);
-            await _unitOfWork.Save();
+            await _unitOfWork.SaveChangesAsync();
 
         }
 
         public async Task DeleteBookAsync(int id)
         {
             await _unitOfWork.BookRepository.DeleteBookAsync(id);
-            await _unitOfWork.Save();
+            await _unitOfWork.SaveChangesAsync();
         }
 
     }
