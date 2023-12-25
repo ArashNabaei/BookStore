@@ -43,5 +43,26 @@ namespace Infrastructure.Repositories.Write.Publishers
             }
 
         }
+
+        public async Task UpdatePublisherAsync(int id, Publisher publisher)
+        {
+            try
+            {
+                var publisherToUpdate = await _eFConnection.Publishers.FindAsync(id);
+
+                if (publisherToUpdate != null)
+                {
+                    publisherToUpdate.Name = publisher.Name;
+                    publisherToUpdate.Address = publisher.Address;
+                    publisherToUpdate.Information = publisher.Information;
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

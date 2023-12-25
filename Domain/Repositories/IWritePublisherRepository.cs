@@ -8,5 +8,7 @@ namespace Domain.Repositories
 
         Task DeletePublisherAsync(int id);
 
+        Task UpdatePublisherAsync(int id,  Publisher publisher);
+
     }
 }

@@ -9,5 +9,7 @@ namespace Application.Services.Write.Publishers
 
         Task DeletePublisherAsync(int Id);
 
+        Task UpdatePublisherAsync(int id,  PublisherDTO publisherDTO);
+
     }
 }

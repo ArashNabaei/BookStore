@@ -46,6 +46,26 @@ namespace Application.Services.Write.Publishers
 
         }
 
+        public async Task UpdatePublisherAsync(int id, PublisherDTO publisherDTO)
+        {
+            var publisher = new Publisher
+            {
+                Name = publisherDTO.Name,
+                Address = publisherDTO.Address,
+                Information = publisherDTO.Information
+            };
 
+            try
+            {
+                await _unitOfWork.BeginTransactionAsync();
+                await _unitOfWork.PublisherRepository.UpdatePublisherAsync(id, publisher);
+                await _unitOfWork.SaveChangesAsync();
+                await _unitOfWork.CommitTransactionAsync();
+            }
+            catch
+            {
+                await _unitOfWork.RollbackTransactionAsync();
+            }
+        }
     }
 }
