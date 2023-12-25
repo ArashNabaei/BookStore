@@ -8,6 +8,8 @@ namespace Domain.Repositories
 
         Task DeleteCustomerAsync(int id);
 
+        Task UpdateCustomerAsync(int id , Customer customer);
+
         Task BuyBookForCustomer(int customerId, int bookId);
 
         Task Deposit(int id, float amount);

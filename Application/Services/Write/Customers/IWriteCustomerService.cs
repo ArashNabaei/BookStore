@@ -8,11 +8,11 @@ namespace Application.Services.Write.Customers
 
         Task DeleteCustomerAsync(int Id);
 
+        Task UpdateCustomerAsync(int id, CustomerDTO customerDTO);
+
         Task BuyBookForCustomer(int customerId, int bookId);
 
         Task Deposit(int id, float amount);
-
-        //Task UpdateCustomerAsync(int id, CustomerDTO customerDTO);
 
     }
 }

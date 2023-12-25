@@ -47,6 +47,25 @@ namespace Infrastructure.Repositories.Write.Customers
 
         }
 
+        public async Task UpdateCustomerAsync(int id, Customer customer)
+        {
+            try
+            {
+                var existingCustomer = await _eFConnection.Customers.FindAsync(id);
+
+                if (existingCustomer != null)
+                {
+                    existingCustomer.Username = customer.Username;
+                    existingCustomer.Password = customer.Password;
+                    existingCustomer.Balance = customer.Balance;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
         public async Task BuyBookForCustomer(int customerId, int bookId)
         {
             try
