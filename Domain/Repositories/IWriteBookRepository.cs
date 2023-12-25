@@ -8,5 +8,7 @@ namespace Domain.Repositories
 
         Task DeleteBookAsync(int id);
 
+        Task UpdateBookAsync(int id, Book book);
+
     }
 }

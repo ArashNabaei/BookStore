@@ -48,5 +48,25 @@ namespace Infrastructure.Repositories.Write.Books
 
         }
 
+        public async Task UpdateBookAsync(int id, Book book)
+        {
+            try
+            {
+                var bookToUpdate = await _eFConnection.Books.FindAsync(id);
+
+                if (bookToUpdate != null)
+                {
+                    bookToUpdate.Name = book.Name;
+                    bookToUpdate.Price = book.Price;
+                    bookToUpdate.Genre = book.Genre;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
     }
 }

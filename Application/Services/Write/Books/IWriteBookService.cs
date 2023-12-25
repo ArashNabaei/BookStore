@@ -9,5 +9,7 @@ namespace Application.Services.Write.Books
 
         Task DeleteBookAsync(int Id);
 
+        Task UpdateBookAsync(int id,  BookDTO bookDTO);
+
     }
 }

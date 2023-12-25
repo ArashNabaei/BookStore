@@ -45,5 +45,26 @@ namespace Application.Services.Write.Books
             }
         }
 
+        public async Task UpdateBookAsync(int id, BookDTO bookDTO)
+        {
+            var book = new Book
+            {
+                Name = bookDTO.Name,
+                Price = bookDTO.Price,
+                Genre = bookDTO.Genre
+            };
+
+            try
+            {
+                await _unitOfWork.BeginTransactionAsync();
+                await _unitOfWork.BookRepository.UpdateBookAsync(id, book);
+                await _unitOfWork.SaveChangesAsync();
+                await _unitOfWork.CommitTransactionAsync();
+            }
+            catch
+            {
+                await _unitOfWork.RollbackTransactionAsync();
+            }
+        }
     }
 }
