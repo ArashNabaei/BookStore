@@ -43,6 +43,27 @@ namespace Application.Services.Write.Authors
             }
         }
 
+        public async Task UpdateAuthorAsync(int id, AuthorDTO authorDTO)
+        {
+            var author = new Author
+            {
+                Id = authorDTO.Id,
+                Username = authorDTO.Username,
+                Password = authorDTO.Password
+            };
+
+            try
+            {
+                await _unitOfWork.BeginTransactionAsync();
+                await _unitOfWork.AuthorRepository.UpdateAuthorAsync(id, author);
+                await _unitOfWork.SaveChangesAsync();
+                await _unitOfWork.CommitTransactionAsync();
+            }
+            catch
+            {
+                await _unitOfWork.RollbackTransactionAsync();
+            }
+        }
     }
 
 }

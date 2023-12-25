@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories.Write.Authors
 {
@@ -42,6 +43,26 @@ namespace Infrastructure.Repositories.Write.Authors
                 Console.WriteLine(ex.Message);
             }
 
+        }
+
+
+        public async Task UpdateAuthorAsync(int id, Author author)
+        {
+            try
+            {
+                var authorToUpdate = await _eFConnection.Authors.FindAsync(id);
+
+                if (authorToUpdate != null)
+                {
+                    authorToUpdate.Username = author.Username;
+                    authorToUpdate.Password= author.Password;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
     }

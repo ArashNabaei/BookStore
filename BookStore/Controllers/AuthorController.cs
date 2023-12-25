@@ -1,5 +1,6 @@
 ﻿using Application.Repositories.Command.Authors.Create;
 using Application.Repositories.Command.Authors.Delete;
+using Application.Repositories.Command.Authors.Update;
 using Application.Repositories.Query.Authors;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -50,6 +51,17 @@ namespace BookStore.Controllers
             var deleteCommand = new DeleteAuthorCommand(id);
             await _mediator.Send(deleteCommand);
             
+            return Ok();
+        }
+
+        [HttpPut("UpdateAuthor/{id}")]
+        public async Task<IActionResult> UpdateAuthor(int id, UpdateAuthorCommand command)
+        {
+            if (id != command.Id)
+                return BadRequest();
+
+            await _mediator.Send(command);
+
             return Ok();
         }
 

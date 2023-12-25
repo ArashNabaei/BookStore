@@ -8,5 +8,7 @@ namespace Application.Services.Write.Authors
 
         Task DeleteAuthorAsync(int Id);
 
+        Task UpdateAuthorAsync(int id, AuthorDTO authorDTO);
+
     }
 }
