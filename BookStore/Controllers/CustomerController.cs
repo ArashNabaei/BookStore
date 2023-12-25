@@ -55,6 +55,17 @@ namespace BookStore.Controllers
             return Ok();
         }
 
+        [HttpPut("UpdateCustomer/{id}")]
+        public async Task<IActionResult> UpdateCustomer(int id, UpdateCustomerCommand command)
+        {
+            if (id != command.Id)
+                return BadRequest();
+            
+            await _mediator.Send(command);
+            
+            return Ok();
+        }
+
 
         [HttpGet("getBooksOfCustomer/{customerId}")]
         public async Task<IActionResult> GetBooksOfCustomerById(int customerId)

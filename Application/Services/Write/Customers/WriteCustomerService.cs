@@ -35,6 +35,28 @@ namespace Application.Services.Write.Customers
 
         }
 
+        public async Task UpdateCustomerAsync(int id, CustomerDTO customerDTO)
+        {
+            try
+            {
+                await _unitOfWork.BeginTransactionAsync();
+                var customer = new Customer
+                {
+                    Username = customerDTO.Username,
+                    Password = customerDTO.Password,
+                    Balance = customerDTO.Balance
+                };
+
+                await _unitOfWork.CustomerRepository.UpdateCustomerAsync(id, customer);
+                await _unitOfWork.SaveChangesAsync();
+                await _unitOfWork.CommitTransactionAsync();
+            }
+            catch
+            {
+                await _unitOfWork.RollbackTransactionAsync();
+            }
+        }
+
         public async Task BuyBookForCustomer(int customerId, int bookId)
         {
             await _unitOfWork.CustomerRepository.BuyBookForCustomer(customerId, bookId);
